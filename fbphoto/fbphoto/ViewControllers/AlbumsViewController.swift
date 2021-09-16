@@ -12,6 +12,11 @@ class AlbumsViewController: UIViewController {
     
     let tableView = UITableView()
     let cellIdentifier = "AlbumTableViewCell"
+    struct data{
+        let createdTime: String
+        let id: Int
+        let name: String
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +33,11 @@ class AlbumsViewController: UIViewController {
                 if let data = result["data"] {
                     print("\(data)") // нужно распарсить
                 }
+            }
+            struct data{
+                let creationTime: String
+                let id : Int
+                let name : String
             }
         }
     }
@@ -49,7 +59,7 @@ class AlbumsViewController: UIViewController {
 
 extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

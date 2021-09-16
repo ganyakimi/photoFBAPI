@@ -19,7 +19,7 @@ class PhotosViewController: UIViewController {
         view.backgroundColor = .white
         addTableView()
         
-        let request = GraphRequest(graphPath: "/")
+        let request = GraphRequest(graphPath: "/me/{album-id}/photos")
         request.start { connection, result, error in
             if let error = error {
                 print("Ошибка: \(error.localizedDescription)")

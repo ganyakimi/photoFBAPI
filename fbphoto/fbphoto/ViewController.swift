@@ -30,6 +30,8 @@ class ViewController: UIViewController {
         albumsButton.translatesAutoresizingMaskIntoConstraints = false
         albumsButton.centerXAnchor.constraint(equalTo: loginButton.centerXAnchor).isActive = true
         albumsButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20).isActive = true
+        
+        //let photoButton = UIButton(type: .system)
     }
     
     @objc func handleAlbumButton(_ sender: UIButton) {
@@ -39,6 +41,11 @@ class ViewController: UIViewController {
             let alert = UIAlertController(title: "Ошибка", message: "Войдите в Facebook", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Закрыть", style: .cancel))
             present(alert, animated: true)
+        }
+    }
+    @objc func handlePhotoButton (_ sender: UIButton){
+        if AccessToken.current != nil{
+            navigationController?.pushViewController(PhotosViewController(), animated: true)
         }
     }
 }
